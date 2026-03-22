@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DineSpace — Premium food delivery. Fresh ingredients, expert chefs, 30-minute delivery.">
+    <title>DineSpace — Premium Food Delivery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="home-page">
+
+    <!-- NAV -->
+    <nav class="main-nav" id="main-nav">
+        <a href="index.html" class="nav-logo">🍽️ DineSpace</a>
+        <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="menu.html">Menu</a>
+            <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">🌙</button>
+            <a href="menu.html" class="nav-cta">Order Now →</a>
+        </div>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">☰</button>
+    </nav>
+
+    <!-- MOBILE MENU DRAWER -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <button class="drawer-close" id="drawer-close">✕</button>
+        <a href="index.html" class="nav-logo" style="display:block;margin-bottom:2rem;">🍽️ DineSpace</a>
+        <a href="#features" onclick="closeDrawer()">Features</a>
+        <a href="#how-it-works" onclick="closeDrawer()">How It Works</a>
+        <a href="menu.html">Browse Menu</a>
+        <a href="menu.html" class="btn-primary" style="margin-top:1rem;text-align:center;">Order Now →</a>
+    </div>
+    <div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Open Now · Delivering in your area
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Restaurant</span>
+                <span class="title-line accent">quality,</span>
+                <span class="title-line">at your door.</span>
+            </h1>
+            <p class="hero-sub">Fresh ingredients, expert chefs, and lightning-fast delivery. Guaranteed in 30 minutes or your next order is free.</p>
+            <div class="hero-actions">
+                <a href="menu.html" class="btn-primary large">Browse Menu →</a>
+                <div class="hero-stat-row">
+                    <div class="hero-stat"><span>4.9★</span><small>Rating</small></div>
+                    <div class="stat-divider"></div>
+                    <div class="hero-stat"><span>12k+</span><small>Orders</small></div>
+                    <div class="stat-divider"></div>
+                    <div class="hero-stat"><span>30min</span><small>Avg. ETA</small></div>
+                    <div class="stat-divider"></div>
+                    <div class="hero-stat"><span>98%</span><small>On Time</small></div>
+                </div>
+            </div>
+            <div class="hero-food-strip">
+                <div class="food-pill">🍔 Burgers</div>
+                <div class="food-pill">🍕 Pizza</div>
+                <div class="food-pill">🥗 Salads</div>
+                <div class="food-pill">🍜 Pasta</div>
+                <div class="food-pill">🍣 Sushi</div>
+                <div class="food-pill">🧆 Wraps</div>
+                <div class="food-pill">🥤 Drinks</div>
+            </div>
+        </div>
+        <!-- Decorative blobs -->
+        <div class="hero-blob blob-1"></div>
+        <div class="hero-blob blob-2"></div>
+    </section>
+
+    <!-- MARQUEE BANNER -->
+    <div class="marquee-banner">
+        <div class="marquee-track">
+            <span>🍔 Fresh Daily</span><span class="mdot">·</span>
+            <span>🚀 30-Min Delivery</span><span class="mdot">·</span>
+            <span>🛡️ Secure Checkout</span><span class="mdot">·</span>
+            <span>🌿 Locally Sourced</span><span class="mdot">·</span>
+            <span>⭐ 4.9 Rating</span><span class="mdot">·</span>
+            <span>💳 Multiple Payment Options</span><span class="mdot">·</span>
+            <span>📍 Live Map Tracking</span><span class="mdot">·</span>
+            <span>🍔 Fresh Daily</span><span class="mdot">·</span>
+            <span>🚀 30-Min Delivery</span><span class="mdot">·</span>
+            <span>🛡️ Secure Checkout</span><span class="mdot">·</span>
+            <span>🌿 Locally Sourced</span><span class="mdot">·</span>
+            <span>⭐ 4.9 Rating</span><span class="mdot">·</span>
+            <span>💳 Multiple Payment Options</span><span class="mdot">·</span>
+            <span>📍 Live Map Tracking</span><span class="mdot">·</span>
+        </div>
+    </div>
+
+    <!-- FEATURES -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <div class="section-label">Why DineSpace</div>
+            <h2 class="section-title">Built for food lovers</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Lightning Fast</h3>
+                <p>Average delivery in under 30 minutes. Track your order on a live map the moment it leaves our kitchen.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👨‍🍳</div>
+                <h3>Expert Chefs</h3>
+                <p>Every dish crafted by professional culinary staff using locally sourced, seasonal ingredients.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Bank-Level Security</h3>
+                <p>OTP email verification, rate limiting, and input sanitization protect every order you place.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌿</div>
+                <h3>Fresh Daily</h3>
+                <p>Our menu reflects the freshest produce available. No frozen shortcuts — ever.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📍</div>
+                <h3>Smart Map Delivery</h3>
+                <p>Pin your exact location on our interactive map. We deliver to the precise spot you choose.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💳</div>
+                <h3>Flexible Payment</h3>
+                <p>Cash on delivery, credit card, or digital wallets — pay how you prefer, securely.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="section-header">
+            <div class="section-label">The Process</div>
+            <h2 class="section-title">Order in 3 simple steps</h2>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">01</div>
+                <div class="step-icon">🍔</div>
+                <h4>Browse & Add</h4>
+                <p>Explore our curated menu across 6 categories. Add items to your cart instantly.</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+                <div class="step-num">02</div>
+                <div class="step-icon">📍</div>
+                <h4>Pin & Verify</h4>
+                <p>Drop a pin on the map, fill your details, and verify with a one-time email code.</p>
+            </div>
+            <div class="step-arrow">→</div>
+            <div class="step">
+                <div class="step-num">03</div>
+                <div class="step-icon">🏍️</div>
+                <h4>Sit Back</h4>
+                <p>Your order is confirmed and our rider heads to your exact location.</p>
+            </div>
+        </div>
+        <a href="menu.html" class="btn-primary large">Start Your Order</a>
+    </section>
+
+    <!-- POPULAR ITEMS PREVIEW -->
+    <section class="popular-section">
+        <div class="section-header">
+            <div class="section-label">Most Ordered</div>
+            <h2 class="section-title">Customer favourites</h2>
+        </div>
+        <div class="popular-grid">
+            <div class="popular-card">
+                <div class="pop-emoji">🍔</div>
+                <div class="pop-info">
+                    <h4>Classic Smash Burger</h4>
+                    <p>Double patty, cheddar, house sauce</p>
+                    <div class="pop-footer">
+                        <span class="pop-price">120.00 EGP</span>
+                        <a href="menu.html" class="pop-order-btn">Order →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="popular-card">
+                <div class="pop-emoji">🍕</div>
+                <div class="pop-info">
+                    <h4>Margherita Pizza</h4>
+                    <p>San Marzano tomato, mozzarella</p>
+                    <div class="pop-footer">
+                        <span class="pop-price">15.00 EGP</span>
+                        <a href="menu.html" class="pop-order-btn">Order →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="popular-card">
+                <div class="pop-emoji">🍝</div>
+                <div class="pop-info">
+                    <h4>Spaghetti Bolognese</h4>
+                    <p>Slow-cooked beef ragù, parmesan</p>
+                    <div class="pop-footer">
+                        <span class="pop-price">16.00 EGP</span>
+                        <a href="menu.html" class="pop-order-btn">Order →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="popular-card">
+                <div class="pop-emoji">🧄</div>
+                <div class="pop-info">
+                    <h4>Truffle Mushroom Pizza</h4>
+                    <p>Truffle cream, wild mushrooms</p>
+                    <div class="pop-footer">
+                        <span class="pop-price">19.00 EGP</span>
+                        <a href="menu.html" class="pop-order-btn">Order →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:2.5rem;">
+            <a href="menu.html" class="btn-primary">View Full Menu →</a>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="section-header">
+            <div class="section-label">Reviews</div>
+            <h2 class="section-title">What people say</h2>
+        </div>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"The smash burger arrived hot, perfectly packed. Honestly better than most dine-in restaurants."</p>
+                <div class="reviewer">— Ahmed K.</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Love the map feature — I pinned exactly where I was sitting in the park and they found me!"</p>
+                <div class="reviewer">— Sara M.</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Truffle mushroom pizza is insane. Delivered in 24 minutes. This is my weekly order now."</p>
+                <div class="reviewer">— Omar T.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+        <h2>Ready to order?</h2>
+        <p>Use code <strong>DINE10</strong> for 10% off your first order.</p>
+        <a href="menu.html" class="btn-primary large">Browse Menu →</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <span class="footer-logo">🍽️ DineSpace</span>
+                <p>Premium food delivery. Fresh daily, delivered fast.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h5>Order</h5>
+                    <a href="menu.html">Full Menu</a>
+                    <a href="menu.html">Burgers</a>
+                    <a href="menu.html">Pizza</a>
+                    <a href="menu.html">Salads</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Info</h5>
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="mailto:support@dinespace.com">Support</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <small>© 2025 DineSpace. All rights reserved.</small>
+            <small>support@dinespace.com</small>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode
+        var toggle = document.getElementById('theme-toggle');
+        var html = document.documentElement;
+        var saved = localStorage.getItem('ds_theme') || 'light';
+        html.setAttribute('data-theme', saved);
+        toggle.textContent = saved === 'dark' ? '☀️' : '🌙';
+        toggle.addEventListener('click', function() {
+            var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('ds_theme', next);
+            toggle.textContent = next === 'dark' ? '☀️' : '🌙';
+        });
+
+        // Sticky nav shadow
+        window.addEventListener('scroll', function() {
+            document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        // Mobile drawer
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-drawer').classList.add('open');
+            document.getElementById('drawer-overlay').classList.add('open');
+        });
+        function closeDrawer() {
+            document.getElementById('mobile-drawer').classList.remove('open');
+            document.getElementById('drawer-overlay').classList.remove('open');
+        }
+        document.getElementById('drawer-close').addEventListener('click', closeDrawer);
+    </script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DineSpace — Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="menu-page">
+
+    <nav class="main-nav" id="main-nav">
+        <a href="index.html" class="nav-logo">🍽️ DineSpace</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode">🌙</button>
+            <a href="checkout.html" class="nav-cart-btn" id="nav-cart-btn">
+                🛒 Cart <span class="cart-badge" id="cart-count">0</span>
+                <span class="cart-total-nav"><span id="cart-total-nav">0.00</span>EGP</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="menu-hero">
+        <div class="section-label">What are you craving?</div>
+        <h1 class="menu-hero-title">Our Menu</h1>
+        <p>Handcrafted meals, ready at your door in 30 minutes.</p>
+
+        <!-- SEARCH BAR -->
+        <div class="menu-search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="menu-search" placeholder="Search dishes, ingredients..." autocomplete="off">
+            <button class="search-clear" id="search-clear" style="display:none;">✕</button>
+        </div>
+    </div>
+
+    <!-- CATEGORY TABS -->
+    <div class="category-tabs" id="category-tabs">
+        <button class="tab active" data-cat="all">All</button>
+        <button class="tab" data-cat="burgers">🍔 Burgers</button>
+        <button class="tab" data-cat="pizza">🍕 Pizza</button>
+        <button class="tab" data-cat="salads">🥗 Salads</button>
+        <button class="tab" data-cat="pasta">🍜 Pasta</button>
+        <button class="tab" data-cat="sides">🍟 Sides</button>
+        <button class="tab" data-cat="drinks">🥤 Drinks</button>
+    </div>
+
+    <main id="menu-page">
+        <!-- SORT BAR -->
+        <div class="sort-bar">
+            <span class="results-count" id="results-count">14 items</span>
+            <div class="sort-right">
+                <label for="sort-select">Sort:</label>
+                <select id="sort-select">
+                    <option value="default">Featured</option>
+                    <option value="price-asc">Price: Low → High</option>
+                    <option value="price-desc">Price: High → Low</option>
+                    <option value="name">Name A–Z</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="menu-grid" id="menu-grid">
+
+            <!-- BURGERS -->
+            <div class="menu-item" data-cat="burgers" data-price="120" data-name="Classic Smash Burger" data-order="1">
+                <button class="wishlist-btn" data-item="Classic Smash Burger" title="Save for later">🤍</button>
+                <div class="item-emoji">🍔</div>
+                <div class="item-info">
+                    <div class="item-badges"><span class="badge badge-popular">Popular</span></div>
+                    <h3>Classic Smash Burger</h3>
+                    <p class="item-desc">Double smashed patty, cheddar, house sauce, brioche bun</p>
+                    <div class="item-meta">
+                        <span class="item-cal">🔥 620 kcal</span>
+                        <span class="item-time">⏱ 15 min</span>
+                    </div>
+                    <div class="item-tags"><span class="tag">Beef</span><span class="tag">Cheese</span></div>
+                </div>
+                <div class="item-footer">
+                    <span class="item-price">120.00 EGP</span>
+                    <button class="add-btn" onclick="addToCart('Classic Smash Burger',120.00,'🍔')">+ Add</button>
+                </div>
+            </div>
+
+            <div class="menu-item" data-cat="burgers" data-price="140" data-name="Avocado Chicken Burger" data-order="2">
+                <button class="wishlist-btn" data-item="Avocado Chicken Burger" title="Save for later">🤍</button>
+                <div class="item-emoji">🥑</div>
+                <div class="item-info">
+                    <div class="item-badges"><span class="badge badge-new">New</span></div>
+                    <h3>Avocado Chicken Burger</h3>
+                    <p class="item-desc">Grilled chicken, fresh avocado, tomato, garlic aioli</p>
+                    <div class="item-meta"><span class="item-cal">🔥 540 kcal</span><span class="item-time">⏱ 18 min</span></div>
+                    <div class="item-tags"><span class="tag">Chicken</span><span class="tag">Healthy</span></div>
+                </div>
+                <div class="item-footer">
+                    <span class="item-price">140.00 EGP</span>
+                    <button class="add-btn" onclick="addToCart('Avocado Chicken Burger',140.00,'🥑')">+ Add</button>
+                </div>
+            </div>
+
+            <div class="menu-item" data-cat="burgers" data-price="135" data-name="Spicy BBQ Beef Burger" data-order="3">
+                <button class="wishlist-btn" data-item="Spicy BBQ Beef Burger" title="Save for later">🤍</button>
+                <div class="item-emoji">🌶️</div>
+                <div class="item-info">
+                    <div class="item-badges"><span class="badge badge-spicy">Spicy</span></div>
+                    <h3>Spicy BBQ Beef Burger</h3>
+                    <p class="item-desc">Beef patty, jalapeño, smoky BBQ sauce, pepper jack</p>
+                    <div class="item-meta"><span class="item-cal">🔥 680 kcal</span><span class="item-time">⏱ 15 min</span></div>
+                    <div class="item-tags"><span class="tag">Beef</span><span class="tag">Spicy</span></div>
+                </div>
+                <div class="item-footer">
+                    <span class="item-price">130.50 EGP</span>
+                    <button class="add-btn" onclick="addToCart('Spicy BBQ Beef Burger',130.50,'🌶️')">+ Add</button>
+                </div>
+            </div>
+
+            <!-- PIZZA -->
+            <div class="menu-item" data-cat="pizza" data-price="150" data-name="Margherita Pizza" data-order="4">
+                <button class="wishlist-btn" data-item="Margherita Pizza" title="Save for later">🤍</button>
+                <div class="item-emoji">🍕</div>
+                <div class="item-info">
+                    <div class="item-badges"><span class="badge badge-popular">Popular</span><span class="badge badge-veg">Veg</span></div>
+                    <h3>Margherita Pizza</h3>
+                    <p class="item-desc">San Marzano tomato, fresh mozzarella, basil, EVOO</p>
+                    <div class="item-meta"><span class="item-cal">🔥 780 kcal</span><span class="item-time">⏱ 20 min</span></div>
+                    <div class="item-tags"><span class="tag">Vegetarian</span><span class="tag">Classic</span></div>
+                </div>
+                <div class="item-footer">
+                    <span class="item-price">150.00 EGP</span>
+                    <button class="add-btn" onclick="addToCart('Margherita Pizza',150.00,'🍕')">+ Add</button>
+                </div>
+            </div>
+
+            <div class="menu-item" data-cat="pizza" data-price="190" data-name="Truffle Mushroom Pizza" data-order="5">
+                <button class="wishlist-btn" data-item="Truffle Mushroom Pizza" title="Save for later">🤍</button>
+                <div class="item-emoji">🧄</div>
+                <div class="item-info">
+                    <div class="item-badges"><span class="badge badge-new">New</span></div>
+                    <h3>Truffle Mushroom Pizza</h3>
+                    <p class="item-desc">Truffle cream, wild mushrooms, parmesan, fresh thyme</p>
+                    <div class="item-meta"><span class="item-cal">🔥 860 kcal</span><span class="item-time">⏱ 22 min</span></div>
+                    <div class="item-tags"><span class="tag">Premium</span><span class="tag">Vegetarian</span></div>
+                </div>
+                <div class="item-footer">
+                    <span class="item-price">190.00 EGP</span>
+                    <button class="add-btn" onclick="addToCart('Truffle Mushroom Pizza',190.00,'🧄')">+ Add</button>
+                </div>
+            </div>
+
+            <div class="menu-item" data-cat="pizza" data-price="180" data-name="Meat Feast Pizza" data-order="6">
+                <button class="wishlist-btn" data-item="Meat Feast Pizza" title="Save for later">🤍</button>
+                <div class="item-emoji">🥩</div>
+                <div class="item-info">
+                    <div class="item-badges"></div>
+                    <h3>Meat Feast Pizza</h3>
+                    <p class="item-desc">Pepperoni, sausage, bacon, ground beef, mozzarella</p>
+                    <div class="item-meta"><span class="item-cal">🔥 1050 kcal</span><span class="item-time">⏱ 22 min</span></div>
+                    <div class="item-tags"><span class="tag">Meat</span><span class="tag">Hearty</span></div>
+                </div>
+                <div class="item-footer">
+                    <span class="item-price">180.00 EGP</span>
+                    <button class="add-btn" onclick="addToCart('Meat Feast Pizza',180.00,'🥩')">+ Add</button>
+                </div>
+            </div>
+
+            <!-- SALADS -->
+            <div class="menu-item" data-cat="salads" data-price="90" data-name="Caesar Salad" data-order="7">
+                <button class="wishlist-btn" data-item="Caesar Salad" title="Save for later">🤍</button>
+                <div class="item-emoji">🥗</div>
+                <div class="item-info">
+                    <div class="item-badges"><span class="badge badge-veg">Veg</span></div>
+                    <h3>Caesar Salad</h3>
+                    <p class="item-desc">Romaine, parmesan, house croutons, caesar dressing</p>
+                    <div class="item-meta"><span class="item-cal">🔥 340 kcal</span><span class="item-time">⏱ 10 min</span></div>
+                    <div class="item-tags"><span class="tag">Light</span><span class="tag">Vegetarian</span></div>
+                </div>
+                <div class="item-footer">
+                    <span class="item-price">90.00 EGP</span>
+                    <button class="add-btn" onclick="addToCart('Caesar Salad',90.00,'🥗')">+ Add</button>
+                </div>
+            </div>
+
+            <div class="menu-item" data-cat="salads" data-price="110" data-name="Mixed Berry and Feta Salad" data-order="8">
+                <button class="wishlist-btn" data-item="Mixed Berry and Feta Salad" title="Save for later">🤍</button>
+                <div class="item-emoji">🫐</div>
+                <div class="item-info">
+                    <div class="item-badges"><span class="badge badge-popular">Popular</span><span class="badge badge-veg">Veg</span></div>
+                    <h3>Mixed Berry &amp; Feta Salad</h3>
+                    <p class="item-desc">Mixed greens, blueberry, strawberry, feta, balsamic glaze</p>
+                    <div class="item-meta"><span class="item-cal">🔥 280 kcal</span><span class="item-time">⏱ 10 min</span></div>
+                    <div class="item-tags"><span class="tag">Light</span><span class="tag">Fresh</span></div>
+                </div>
+                <div class="item-footer">
+                    <span class="item-price">110.00 EGP</span>
+                    <button class="add-btn" onclick="addToCart('Mixed Berry and Feta Salad',110.00,'🫐')">+ Add</button>
+                </div>
+            </div>
+
+            <!-- PASTA -->
+            <div class="menu-item" data-cat="pasta" data-price="160" data-name="Spaghetti Bolognese" data-order="9">
+                <button class="wishlist-btn" data-item="Spaghetti Bolognese" title="Save for later">🤍</button>
+                <div class="item-emoji">🍝</div>
+                <div class="item-info">
+                    <div class="item-badges"><span class="badge badge-popular">Popular</span></div>
+                    <h3>Spaghetti Bolognese</h3>
+                    <p class="item-desc">Slow-cooked beef ragù, spaghetti, parmesan, fresh basil</p>
+                    <div class="item-meta"><span class="item-cal">🔥 720 kcal</span><span class="item-time">⏱ 18 min</span></div>
+                    <div class="item-tags"><span class="tag">Beef</span><span class="tag">Classic</span></div>
+                </div>
+                <div class="item-footer">
+                    <span class="item-price">160.00 EGP</span>
+                    <button class="add-btn" onclick="addToCart('Spaghetti Bolognese',160.00,'🍝')">+ Add</button>
+                </div>
+            </div>
+
+            <div class="menu-item" data-cat="pasta" data-price="150" data-name="Four Cheese Penne" data-order="10">
+                <button class="wishlist-btn" data-item="Four Cheese Penne" title="Save for later">🤍</button>
+                <div class="item-emoji">🧀</div>
+                <div class="item-info">
+                    <div class="item-badges"><span class="badge badge-veg">Veg</span></div>
+                    <h3>Four Cheese Penne</h3>
+                    <p class="item-desc">Penne, mozzarella, cheddar, gorgonzola, parmesan cream</p>
+                    <div class="item-meta"><span class="item-cal">🔥 880 kcal</span><span class="item-time">⏱ 18 min</span></div>
+                    <div class="item-tags"><span class="tag">Cheese</span><span class="tag">Vegetarian</span></div>
+                </div>
+                <div class="item-footer">
+                    <span class="item-price">150.00 EGP</span>
+                    <button class="add-btn" onclick="addToCart('Four Cheese Penne',150.00,'🧀')">+ Add</button>
+                </div>
+            </div>
+
+            <!-- SIDES -->
+            <div class="menu-item" data-cat="sides" data-price="50" data-name="Seasoned Fries" data-order="11">
+                <button class="wishlist-btn" data-item="Seasoned Fries" title="Save for later">🤍</button>
+                <div class="item-emoji">🍟</div>
+                <div class="item-info">
+                    <div class="item-badges"><span class="badge badge-popular">Popular</span></div>
+                    <h3>Seasoned Fries</h3>
+                    <p class="item-desc">Crispy fries tossed in house seasoning blend</p>
+                    <div class="item-meta"><span class="item-cal">🔥 380 kcal</span><span class="item-time">⏱ 12 min</span></div>
+                    <div class="item-tags"><span class="tag">Vegan</span><span class="tag">Side</span></div>
+                </div>
+                <div class="item-footer">
+                    <span class="item-price">50.00 EGP</span>
+                    <button class="add-btn" onclick="addToCart('Seasoned Fries',50.00,'🍟')">+ Add</button>
+                </div>
+            </div>
+
+            <div class="menu-item" data-cat="sides" data-price="50.5" data-name="Onion Rings" data-order="12">
+                <button class="wishlist-btn" data-item="Onion Rings" title="Save for later">🤍</button>
+                <div class="item-emoji">🧅</div>
+                <div class="item-info">
+                    <div class="item-badges"></div>
+                    <h3>Onion Rings</h3>
+                    <p class="item-desc">Beer-battered crispy rings with chipotle dip</p>
+                    <div class="item-meta"><span class="item-cal">🔥 420 kcal</span><span class="item-time">⏱ 12 min</span></div>
+                    <div class="item-tags"><span class="tag">Crispy</span><span class="tag">Side</span></div>
+                </div>
+                <div class="item-footer">
+                    <span class="item-price">50.50 EGP</span>
+                    <button class="add-btn" onclick="addToCart('Onion Rings',50.50,'🧅')">+ Add</button>
+                </div>
+            </div>
+
+            <!-- DRINKS -->
+            <div class="menu-item" data-cat="drinks" data-price="45" data-name="Freshly Squeezed OJ" data-order="13">
+                <button class="wishlist-btn" data-item="Freshly Squeezed OJ" title="Save for later">🤍</button>
+                <div class="item-emoji">🥤</div>
+                <div class="item-info">
+                    <div class="item-badges"></div>
+                    <h3>Freshly Squeezed OJ</h3>
+                    <p class="item-desc">Cold-pressed oranges, no added sugar</p>
+                    <div class="item-meta"><span class="item-cal">🔥 110 kcal</span><span class="item-time">⏱ 5 min</span></div>
+                    <div class="item-tags"><span class="tag">Vegan</span><span class="tag">Fresh</span></div>
+                </div>
+                <div class="item-footer">
+                    <span class="item-price">40.50 EGP</span>
+                    <button class="add-btn" onclick="addToCart('Freshly Squeezed OJ',40.50,'🥤')">+ Add</button>
+                </div>
+            </div>
+
+            <div class="menu-item" data-cat="drinks" data-price="60" data-name="Mixed Berry Smoothie" data-order="14">
+                <button class="wishlist-btn" data-item="Mixed Berry Smoothie" title="Save for later">🤍</button>
+                <div class="item-emoji">🧃</div>
+                <div class="item-info">
+                    <div class="item-badges"><span class="badge badge-popular">Popular</span></div>
+                    <h3>Mixed Berry Smoothie</h3>
+                    <p class="item-desc">Strawberry, blueberry, banana, Greek yogurt</p>
+                    <div class="item-meta"><span class="item-cal">🔥 220 kcal</span><span class="item-time">⏱ 5 min</span></div>
+                    <div class="item-tags"><span class="tag">Healthy</span><span class="tag">Fresh</span></div>
+                </div>
+                <div class="item-footer">
+                    <span class="item-price">60.00 EGP</span>
+                    <button class="add-btn" onclick="addToCart('Mixed Berry Smoothie',60.00,'🧃')">+ Add</button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- NO RESULTS -->
+        <div class="no-results" id="no-results" style="display:none;">
+            <div style="font-size:3rem;">🔍</div>
+            <h3>No dishes found</h3>
+            <p>Try a different search term or browse all categories.</p>
+            <button class="btn-primary" onclick="clearSearch()">Clear Search</button>
+        </div>
+    </main>
+
+    <!-- FLOATING CART BAR -->
+    <div class="floating-cart" id="floating-cart" style="display:none;">
+        <div class="floating-cart-info">
+            <span id="fc-count">0 items</span>
+            <span id="fc-names" class="fc-names"></span>
+        </div>
+        <a href="checkout.html" class="btn-primary">Checkout — EGP<span id="fc-total">0.00</span> →</a>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <!-- WISHLIST PANEL -->
+    <div class="wishlist-panel" id="wishlist-panel">
+        <div class="wishlist-header">
+            <h3>❤️ Saved Items</h3>
+            <button onclick="toggleWishlist()">✕</button>
+        </div>
+        <ul id="wishlist-list" class="wishlist-list"></ul>
+        <p class="wishlist-empty" id="wishlist-empty">No saved items yet. Click 🤍 on any dish!</p>
+    </div>
+    <div class="drawer-overlay" id="wishlist-overlay" onclick="toggleWishlist()"></div>
+
+    <!-- WISHLIST TRIGGER -->
+    <button class="wishlist-fab" id="wishlist-fab" onclick="toggleWishlist()" title="Saved items">
+        ❤️ <span id="wishlist-count">0</span>
+    </button>
+
+    <script src="app.js"></script>
+    <script>
+        // Dark mode
+        var toggle = document.getElementById('theme-toggle');
+        var html = document.documentElement;
+        var saved = localStorage.getItem('ds_theme') || 'light';
+        html.setAttribute('data-theme', saved);
+        toggle.textContent = saved === 'dark' ? '☀️' : '🌙';
+        toggle.addEventListener('click', function() {
+            var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('ds_theme', next);
+            toggle.textContent = next === 'dark' ? '☀️' : '🌙';
+        });
+
+        // Category filter
+        document.querySelectorAll('.tab').forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+                tab.classList.add('active');
+                var cat = tab.dataset.cat;
+                filterAndSort(cat, document.getElementById('sort-select').value, document.getElementById('menu-search').value);
+            });
+        });
+
+        // Sort
+        document.getElementById('sort-select').addEventListener('change', function() {
+            var cat = (document.querySelector('.tab.active') || {}).dataset.cat || 'all';
+            filterAndSort(cat, this.value, document.getElementById('menu-search').value);
+        });
+
+        // Search
+        var searchInput = document.getElementById('menu-search');
+        var searchClear = document.getElementById('search-clear');
+        searchInput.addEventListener('input', function() {
+            searchClear.style.display = this.value ? 'block' : 'none';
+            var cat = (document.querySelector('.tab.active') || {}).dataset.cat || 'all';
+            filterAndSort(cat, document.getElementById('sort-select').value, this.value);
+        });
+        function clearSearch() {
+            searchInput.value = '';
+            searchClear.style.display = 'none';
+            var cat = (document.querySelector('.tab.active') || {}).dataset.cat || 'all';
+            filterAndSort(cat, document.getElementById('sort-select').value, '');
+        }
+        document.getElementById('search-clear').addEventListener('click', clearSearch);
+
+        function filterAndSort(cat, sortVal, query) {
+            var items = Array.from(document.querySelectorAll('.menu-item'));
+            var q = (query || '').toLowerCase().trim();
+            var visible = [];
+
+            items.forEach(function(item) {
+                var catMatch = (cat === 'all' || item.dataset.cat === cat);
+                var name = (item.dataset.name || '').toLowerCase();
+                var desc = (item.querySelector('.item-desc') || {}).textContent || '';
+                var tags = (item.querySelector('.item-tags') || {}).textContent || '';
+                var textMatch = !q || name.includes(q) || desc.toLowerCase().includes(q) || tags.toLowerCase().includes(q);
+                item.style.display = (catMatch && textMatch) ? 'flex' : 'none';
+                if (catMatch && textMatch) visible.push(item);
+            });
+
+            // Sort
+            var grid = document.getElementById('menu-grid');
+            visible.sort(function(a, b) {
+                if (sortVal === 'price-asc')  return parseFloat(a.dataset.price) - parseFloat(b.dataset.price);
+                if (sortVal === 'price-desc') return parseFloat(b.dataset.price) - parseFloat(a.dataset.price);
+                if (sortVal === 'name')       return (a.dataset.name||'').localeCompare(b.dataset.name||'');
+                return parseInt(a.dataset.order) - parseInt(b.dataset.order);
+            });
+            visible.forEach(function(item) { grid.appendChild(item); });
+
+            document.getElementById('results-count').textContent = visible.length + ' item' + (visible.length !== 1 ? 's' : '');
+            document.getElementById('no-results').style.display = visible.length === 0 ? 'block' : 'none';
+        }
+
+        // Wishlist
+        var wishlist = JSON.parse(localStorage.getItem('ds_wishlist') || '[]');
+        function renderWishlist() {
+            var list = document.getElementById('wishlist-list');
+            var empty = document.getElementById('wishlist-empty');
+            var fab = document.getElementById('wishlist-count');
+            list.innerHTML = '';
+            fab.textContent = wishlist.length;
+            if (wishlist.length === 0) { empty.style.display = 'block'; return; }
+            empty.style.display = 'none';
+            wishlist.forEach(function(name) {
+                var li = document.createElement('li');
+                li.className = 'wishlist-item';
+                li.innerHTML = '<span>' + name + '</span><button onclick="removeWishlist(\'' + name.replace(/'/g, "\\'") + '\')">✕</button>';
+                list.appendChild(li);
+            });
+        }
+        function removeWishlist(name) {
+            wishlist = wishlist.filter(function(w) { return w !== name; });
+            localStorage.setItem('ds_wishlist', JSON.stringify(wishlist));
+            renderWishlist();
+            // Reset heart
+            document.querySelectorAll('.wishlist-btn').forEach(function(b) {
+                if (b.dataset.item === name) b.textContent = '🤍';
+            });
+        }
+        function toggleWishlist() {
+            document.getElementById('wishlist-panel').classList.toggle('open');
+            document.getElementById('wishlist-overlay').classList.toggle('open');
+        }
+
+        document.querySelectorAll('.wishlist-btn').forEach(function(btn) {
+            var name = btn.dataset.item;
+            if (wishlist.includes(name)) btn.textContent = '❤️';
+            btn.addEventListener('click', function() {
+                if (wishlist.includes(name)) {
+                    wishlist = wishlist.filter(function(w) { return w !== name; });
+                    btn.textContent = '🤍';
+                    showToast('Removed from saved items.');
+                } else {
+                    wishlist.push(name);
+                    btn.textContent = '❤️';
+                    showToast('❤️ ' + name + ' saved!');
+                }
+                localStorage.setItem('ds_wishlist', JSON.stringify(wishlist));
+                renderWishlist();
+            });
+        });
+        renderWishlist();
+
+        window.addEventListener('scroll', function() {
+            document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 20);
+        });
+    </script>
+</body>
+</html>

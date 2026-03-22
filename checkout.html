@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DineSpace — Checkout</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Leaflet map without api key -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body class="checkout-page">
+
+    <!-- NAV -->
+    <nav class="main-nav" id="main-nav">
+        <a href="index.html" class="nav-logo">🍽️ DineSpace</a>
+        <div class="nav-links">
+            <button class="theme-toggle" id="theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">🌙</button>
+            <a href="menu.html" class="back-link">← Back to Menu</a>
+        </div>
+    </nav>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <main id="checkout-page">
+        <div class="checkout-layout">
+
+            <!-- LEFT COLUMN -->
+            <div class="checkout-left">
+
+                <!-- STEP 1: DELIVERY -->
+                <div class="checkout-step-header">
+                    <div class="step-badge">Step 1</div>
+                    <h2>Delivery Details</h2>
+                </div>
+                <section id="checkout-form-section" class="card">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="cust-name">Full Name <span class="req">*</span></label>
+                            <input type="text" id="cust-name" placeholder="John Smith" autocomplete="name" maxlength="80">
+                        </div>
+                        <div class="form-group">
+                            <label for="cust-phone">Phone Number <span class="req">*</span></label>
+                            <input type="tel" id="cust-phone" placeholder="+1 (555) 000-0000" autocomplete="tel" maxlength="20">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cust-email">Email Address <span class="req">*</span></label>
+                        <input type="email" id="cust-email" placeholder="you@example.com" autocomplete="email" maxlength="120">
+                    </div>
+                    <div class="form-group">
+                        <label for="cust-address">Delivery Address <span class="req">*</span></label>
+                        <textarea id="cust-address" placeholder="Click the map to pin your exact location..." rows="2" autocomplete="street-address" maxlength="300"></textarea>
+                        <small class="field-hint">💡 Click the map below to auto-fill your address</small>
+                    </div>
+
+                    <!-- EMBEDDED MAP -->
+                    <div class="map-section">
+                        <div class="map-section-header">
+                            <span class="map-label">📍 Confirm Your Location</span>
+                            <button type="button" id="my-location-btn" class="btn-location" onclick="useMyLocation()">📍 My Location</button>
+                        </div>
+                        <div class="map-search-bar">
+                            <input type="text" id="map-query" placeholder="Search a street, city, or landmark...">
+                            <button type="button" class="btn-secondary small" onclick="searchOnMap()">Search</button>
+                        </div>
+                        <div id="leaflet-map"></div>
+                        <p class="map-tip">🖱️ Click anywhere on the map to pin your exact delivery location</p>
+                    </div>
+                </section>
+
+                <!-- STEP 2: PAYMENT -->
+                <div class="checkout-step-header" style="margin-top:2rem;">
+                    <div class="step-badge">Step 2</div>
+                    <h2>Payment Method</h2>
+                </div>
+                <section id="payment-section" class="card">
+                    <div class="payment-options">
+                        <label class="payment-opt selected">
+                            <input type="radio" name="payment" value="Cash on Delivery" checked>
+                            <span class="payment-icon">💵</span>
+                            <div><strong>Cash on Delivery</strong><small>Pay when your order arrives</small></div>
+                            <span class="payment-check">✓</span>
+                        </label>
+                        <label class="payment-opt">
+                            <input type="radio" name="payment" value="Credit / Debit Card">
+                            <span class="payment-icon">💳</span>
+                            <div><strong>Credit / Debit Card</strong><small>Visa, Mastercard, Amex</small></div>
+                            <span class="payment-check">✓</span>
+                        </label>
+                        <label class="payment-opt">
+                            <input type="radio" name="payment" value="Digital Wallet">
+                            <span class="payment-icon">📱</span>
+                            <div><strong>Digital Wallet</strong><small>Apple Pay, Google Pay</small></div>
+                            <span class="payment-check">✓</span>
+                        </label>
+                    </div>
+                    <div class="form-group" style="margin-top:1.25rem;">
+                        <label for="cust-notes">Special Instructions <span class="opt-label">(optional)</span></label>
+                        <textarea id="cust-notes" placeholder="Allergies, spice level, leave at door..." rows="2" maxlength="300"></textarea>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- RIGHT COLUMN: ORDER SUMMARY -->
+            <div class="checkout-right">
+                <div class="order-summary-card card sticky-card">
+                    <h3 class="summary-title">Your Order</h3>
+
+                    <ul id="checkout-cart-items" class="cart-item-list"></ul>
+
+                    <div class="summary-edit">
+                        <a href="menu.html" class="edit-order-link">✏️ Edit / Add Items</a>
+                    </div>
+
+                    <!-- Free delivery progress bar -->
+                    <div class="free-delivery-progress">
+                        <div class="progress-track">
+                            <div class="progress-fill" id="free-delivery-bar" style="width:0%"></div>
+                        </div>
+                        <p class="progress-msg" id="free-delivery-msg">Add 200.00 EGP more for free delivery</p>
+                    </div>
+
+                    <!-- Promo code -->
+                    <div class="promo-row">
+                        <input type="text" id="promo-code" placeholder="Promo code (try DINE10)" maxlength="20">
+                        <button type="button" class="btn-secondary small" id="promo-apply-btn" onclick="applyPromo()">Apply</button>
+                    </div>
+                    <div class="promo-msg" id="promo-msg"></div>
+
+                    <!-- Price breakdown -->
+                    <div class="summary-breakdown">
+                        <div class="summary-row"><span>Subtotal</span><span><span id="checkout-subtotal">0.00 EGP</span> EGP</span></div>
+                        <div class="summary-row" id="discount-row" style="display:none;">
+                            <span style="color:var(--success);">Promo Discount</span>
+                            <span style="color:var(--success);" id="checkout-discount">-0.00 EGP</span>
+                        </div>
+                        <div class="summary-row"><span>Delivery Fee</span><span id="delivery-fee-display">2.99 EGP</span></div>
+                        <div class="summary-row"><span>Tax (8%)</span><span><span id="checkout-tax">0.00 EGP</span> EGP</span></div>
+                        <div class="summary-row total-row">
+                            <strong>Total</strong>
+                            <strong class="total-price-big"><span id="checkout-cart-total">0.00</span>EGP</strong>
+                        </div>
+                    </div>
+
+                    <button class="btn-primary full-width" id="place-order-btn" onclick="initiateCheckout()">
+                        🛒 Place Order
+                    </button>
+                    <div class="trust-badges">
+                        <span>🛡️ Secure</span>
+                        <span>📍 Map verified</span>
+                        <span>⚡ Fast delivery</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+        <!--SUCCESS MODAL — demo confirmation, no real order placed-->
+
+    <div id="success-modal" class="modal success-overlay">
+        <div class="modal-content success-modal-content">
+
+            <!-- Animated SVG checkmark -->
+            <div class="success-ring">
+                <svg viewBox="0 0 60 60" class="success-svg">
+                    <circle class="success-circle" cx="30" cy="30" r="27"/>
+                    <polyline class="success-tick" points="16,30 25,40 44,20"/>
+                </svg>
+            </div>
+
+            <h2 class="success-title">Order Placed! 🎉</h2>
+            <p class="success-subtitle">Your order is being prepared right now.<br>Estimated delivery in 25–35 minutes.</p>
+
+            <!-- Demo version notice -->
+            <div class="demo-notice">
+                <span class="demo-icon"></span>
+                <p>"This is a demo version — no order has been placed."</p>
+            </div>
+
+            <!-- ETA countdown -->
+            <div class="eta-box">
+                <div class="eta-icon">🏍️</div>
+                <div class="eta-text">
+                    <small>Estimated Delivery</small>
+                    <div class="eta-timer" id="eta-countdown">35:00</div>
+                </div>
+            </div>
+
+            <!-- Order detail summary -->
+            <div class="success-details">
+                <div class="success-detail-row">
+                    <span class="sd-label">👤 Customer</span>
+                    <span class="sd-val" id="success-customer">—</span>
+                </div>
+                <div class="success-detail-row">
+                    <span class="sd-label">📦 Items</span>
+                    <span class="sd-val items-val" id="success-order-items">—</span>
+                </div>
+                <div class="success-detail-row">
+                    <span class="sd-label">📍 Address</span>
+                    <span class="sd-val" id="success-address">—</span>
+                </div>
+                <div class="success-detail-row">
+                    <span class="sd-label">💰 Total</span>
+                    <span class="sd-val price-val" id="success-order-total">—</span>
+                </div>
+                <div class="success-detail-row">
+                    <span class="sd-label">🔖 Ref</span>
+                    <span class="sd-val ref-val" id="success-order-ref">—</span>
+                </div>
+            </div>
+
+            <!-- Order status pipeline -->
+            <div class="order-status-steps">
+                <div class="status-step done">
+                    <div class="ss-icon">✅</div><span>Placed</span>
+                </div>
+                <div class="ss-line active"></div>
+                <div class="status-step active">
+                    <div class="ss-icon spin">👨‍🍳</div><span>Preparing</span>
+                </div>
+                <div class="ss-line"></div>
+                <div class="status-step">
+                    <div class="ss-icon">🏍️</div><span>On the Way</span>
+                </div>
+                <div class="ss-line"></div>
+                <div class="status-step">
+                    <div class="ss-icon">🏠</div><span>Delivered</span>
+                </div>
+            </div>
+
+            <a href="index.html" class="btn-primary full-width">Back to Home</a>
+            <p class="success-support">Questions? <a href="mailto:support@dinespace.com">support@dinespace.com</a></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Dark mode
+        var toggle = document.getElementById('theme-toggle');
+        var html   = document.documentElement;
+        var saved  = localStorage.getItem('ds_theme') || 'light';
+        html.setAttribute('data-theme', saved);
+        toggle.textContent = saved === 'dark' ? '☀️' : '🌙';
+        toggle.addEventListener('click', function() {
+            var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('ds_theme', next);
+            toggle.textContent = next === 'dark' ? '☀️' : '🌙';
+        });
+
+        // Sticky navigation 
+        window.addEventListener('scroll', function() {
+            document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 20);
+        });
+    </script>
+</body>
+</html>
