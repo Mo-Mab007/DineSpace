@@ -25,7 +25,7 @@
 
 <br>
 
-[**🚀 Live Demo**](https://YOUR_USERNAME.github.io/dinespace) · [**📖 Documentation**](./docs) · [**🐛 Report Bug**](https://github.com/YOUR_USERNAME/dinespace/issues) · [**✨ Request Feature**](https://github.com/YOUR_USERNAME/dinespace/issues)
+[**🚀 Live Demo**](https://Mo-Mab007.github.io/dinespace) · [**📖 Documentation**](./docs) · [**🐛 Report Bug**](https://github.com/Mo-Mab007/dinespace/issues) · [**✨ Request Feature**](https://github.com/Mo-Mab007/dinespace/issues)
 
 <br>
 
@@ -79,42 +79,13 @@ So I built it like one.
 
 ## 🚀 Live Demo
 
-> **[https://YOUR_USERNAME.github.io/dinespace](https://YOUR_USERNAME.github.io/dinespace)**
+> **[https://Mo-Mab007.github.io/dinespace](https://Mo-Mab007.github.io/dinespace)**
 
 The live demo runs entirely in the browser. No server. No login. No setup.
 
 > ⚠️ **Demo Notice** — The checkout flow is fully built and functional. The OTP email verification system exists in the codebase and is documented, but is **disabled in the demo**. Clicking "Place Order" goes directly to the success screen.
 
 <br>
-
----
-
-## 📸 Screenshots
-
-<div align="center">
-
-| Home — Light Mode | Home — Dark Mode |
-|:---:|:---:|
-| ![Home Light](screenshots/home-light.png) | ![Home Dark](screenshots/home-dark.png) |
-
-| Menu — Search & Filter | Checkout — Embedded Map |
-|:---:|:---:|
-| ![Menu](screenshots/menu.png) | ![Checkout Map](screenshots/checkout-map.png) |
-
-| Order Summary | Success Modal |
-|:---:|:---:|
-| ![Order Summary](screenshots/order-summary.png) | ![Success Modal](screenshots/success-modal.png) |
-
-| UI/UX Design System | Mobile View |
-|:---:|:---:|
-| ![Design System](screenshots/design-system.png) | ![Mobile](screenshots/mobile.png) |
-
-</div>
-
-> 📁 Add your screenshots to the `/screenshots` folder after taking them.
-
-<br>
-
 ---
 
 ## ✨ Features
@@ -245,79 +216,9 @@ dinespace/
 ├── 🎨 style.css           ← Complete design system (CSS variables + dark mode)
 ├── ⚙️  app.js              ← All JavaScript logic
 │
-├── 📁 screenshots/        ← Add your screenshots here for the README
-│   ├── home-light.png
-│   ├── home-dark.png
-│   ├── menu.png
-│   ├── checkout-map.png
-│   ├── order-summary.png
-│   ├── success-modal.png
-│   ├── design-system.png
-│   └── mobile.png
-│
 ├── 📄 dinespace-ui-ux.html  ← Complete UI/UX design system
 ├── 📄 README.md
 └── 📄 LICENSE
-```
-
-<br>
-
----
-
-## ⚡ Getting Started
-
-### Prerequisites
-
-None. This is a pure frontend project — no Node.js, no npm, no install required.
-
-### Clone
-
-```bash
-git clone https://github.com/YOUR_USERNAME/dinespace.git
-cd dinespace
-```
-
-### Option A — Open directly
-
-```bash
-# macOS
-open index.html
-
-# Windows
-start index.html
-
-# Linux
-xdg-open index.html
-```
-
-### Option B — Local server *(recommended)*
-
-The **"My Location"** GPS button requires `localhost` or HTTPS. Raw `file://` URLs will silently fail geolocation in most browsers.
-
-```bash
-# Node.js (no install needed)
-npx serve .
-# → visit http://localhost:3000
-
-# Python 3
-python -m http.server 8080
-# → visit http://localhost:8080
-```
-
-Or install the **[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)** VS Code extension and click **Go Live**.
-
-### Deploy to GitHub Pages
-
-```bash
-# 1. Push your code to GitHub
-git add .
-git commit -m "Initial commit"
-git push origin main
-
-# 2. Go to: Repository → Settings → Pages
-# 3. Source: Deploy from branch → main → / (root)
-# 4. Save — your live URL will be:
-#    https://YOUR_USERNAME.github.io/dinespace
 ```
 
 <br>
@@ -368,7 +269,6 @@ var codes = {
     'DINE20':  0.20,
     'WELCOME': 0.15,
     'FRESH26': 0.26,
-    'NEWCODE': 0.30   // ← add yours here
 };
 ```
 
@@ -696,32 +596,12 @@ Full license text in [`LICENSE`](./LICENSE).
 
 | Channel | Link |
 |---------|------|
-| 📧 Email | support@dinespace.com |
-| 💼 LinkedIn | [Your LinkedIn](https://linkedin.com/in/YOUR_USERNAME) |
-| 🐙 GitHub | [@YOUR_USERNAME](https://github.com/YOUR_USERNAME) |
-| 🌐 Live Demo | [dinespace.github.io](https://YOUR_USERNAME.github.io/dinespace) |
+| 📧 Email | mo.mabrouk007@gmail.com |
+| 💼 LinkedIn | [Your LinkedIn](www.linkedin.com/in/mohamed-mabrouk-b72414278) |
+| 🐙 GitHub | [@Mo-Mab007](https://github.com/Mo-Mab007) |
+| 🌐 Live Demo | [dinespace.github.io](https://Mo-Mab007.github.io/dinespace) |
 
 <br>
-
----
-
-<div align="center">
-
-<br>
-
-**🍽️ DineSpace**
-
-*Built from scratch. Delivered with care.*
-
-<br>
-
-If this project helped you learn something or inspired your own work,
-consider giving it a ⭐ — it genuinely means a lot.
-
-<br>
-
-[![GitHub stars](https://img.shields.io/github/stars/YOUR_USERNAME/dinespace?style=social)](https://github.com/YOUR_USERNAME/dinespace)
-[![GitHub forks](https://img.shields.io/github/forks/YOUR_USERNAME/dinespace?style=social)](https://github.com/YOUR_USERNAME/dinespace/fork)
 
 <br>
 
