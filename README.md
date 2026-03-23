@@ -572,32 +572,13 @@ git push origin feature/my-feature
 
 ---
 
-## 📄 License
-
-```
-MIT License
-
-Copyright (c) 2025 YOUR_NAME
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software.
-```
-
-Full license text in [`LICENSE`](./LICENSE).
-
-<br>
-
----
 
 ## 📬 Contact
 
 | Channel | Link |
 |---------|------|
 | 📧 Email | mo.mabrouk007@gmail.com |
-| 💼 LinkedIn | [Your LinkedIn](www.linkedin.com/in/mohamed-mabrouk-b72414278) |
+| 💼 LinkedIn | [Mohamed Mabrouk](www.linkedin.com/in/mohamed-mabrouk-b72414278) |
 | 🐙 GitHub | [@Mo-Mab007](https://github.com/Mo-Mab007) |
 | 🌐 Live Demo | [dinespace.github.io](https://Mo-Mab007.github.io/dinespace) |
 
