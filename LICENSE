@@ -1,21 +1,32 @@
-MIT License
+Copyright (c) 2026 Mohamed Mabrouk. All Rights Reserved.
 
-Copyright (c) 2026 Mohamed Mabrouk
+PROPRIETARY SOFTWARE LICENSE
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This software and its source code ("DineSpace") are the exclusive
+intellectual property of Mohamed Mabrouk ("the Owner").
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+You may NOT, without the prior written permission of the Owner:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+1. Use this software or any part of it for commercial purposes.
+2. Copy, reproduce, or distribute this software in any form.
+3. Modify, adapt, translate, or create derivative works based on it.
+4. Sublicense, sell, rent, lease, or transfer any rights to this software.
+5. Deploy this software on any server, hosting platform, or domain
+   that you do not personally own.
+6. Present this software as your own work in any context.
+
+PERMITTED USES (without written permission):
+
+- Viewing the source code for personal educational purposes only.
+- Forking the repository on GitHub solely to submit a pull request
+  to the original repository.
+
+ENFORCEMENT:
+
+Unauthorized use of this software may result in legal action under
+applicable intellectual property and copyright law.
+
+For licensing inquiries or permission requests, contact:
+mo.mabrouk007@gmail.com
+
+THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND.
