@@ -1,3 +1,9 @@
+/*
+ * DineSpace — Copyright (c) 2026 Mohamed Mabrouk. All Rights Reserved.
+ * Unauthorized use, reproduction, or distribution is strictly prohibited.
+ * Contact: mo.mabrouk007@gmail.com for licensing inquiries.
+ */
+
 // CONSTANTS 
 var DELIVERY_FEE            = 30.00;
 var TAX_RATE                = 0.12;
